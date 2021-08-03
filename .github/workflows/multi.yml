@@ -6,10 +6,6 @@ on:
 env:
   JAVA_VERSION: 16
 
-defaults:
-  run:
-    shell: bash
-
 jobs: 
   win-msi:
     name: Do stuff on Windows
