@@ -14,7 +14,6 @@ jobs:
   win-msi:
     name: Do stuff on Windows
     runs-on: windows-latest
-    needs: [appdir, metadata]
     steps:
       - name: Two commands, Single line each
         run: |
