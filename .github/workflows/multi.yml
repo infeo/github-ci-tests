@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  [push]
+
+env:
+  JAVA_VERSION: 16
+
+defaults:
+  run:
+    shell: bash
+
+jobs: 
+  win-msi:
+    name: Do stuff on Windows
+    runs-on: windows-latest
+    needs: [appdir, metadata]
+    steps:
+      - name: Two commands, Single line each
+        run: |
+          $Env:JpackageWixWizardResources = (Get-Location).Path + "\dist\win\resources" 
+          gci
+      - name: Two commands, Second Multiline
+        run: |
+          $Env:JpackageWixWizardResources = (Get-Location).Path + "\dist\win\resources" 
+          echo `
+          "Hello"
