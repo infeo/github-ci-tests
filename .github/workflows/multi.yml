@@ -23,7 +23,7 @@ jobs:
       - name: Two commands, Second Multiline, bash 
         run: |
           echo "Single Line"
-          echo `
+          echo \
           "Multi Line"
         shell: bash
       - name: Use working dir
