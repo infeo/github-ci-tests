@@ -2,7 +2,7 @@ name: Second Flow
 
 on:
   workflow_run:
-    workflow: "First Flow"
+    workflows: ["First Flow"]
     tags:
       - '*'
 
