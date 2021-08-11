@@ -7,7 +7,6 @@ on:
       description: 'Are yeh sure?'
       required: true
       default: 'no' 
-  push:
 
 env:
   JAVA_VERSION: 16
