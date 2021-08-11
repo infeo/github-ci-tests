@@ -1,0 +1,16 @@
+name: Second Flow 
+
+on:
+  workflow_run:
+    workflow: "First Flow"
+    tags:
+      - '*'
+
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: "Greet Myself"
+        run: |
+          echo "Hello Meee!"
