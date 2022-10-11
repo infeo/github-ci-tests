@@ -1,0 +1,10 @@
+name: Test Powershell
+on: push
+jobs:
+  variables:
+    name: Test pwsh variables
+    runs-on: windows-latest
+    steps:
+      - run: |
+          $test = "This is a test"
+          echo $test
