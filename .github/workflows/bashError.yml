@@ -1,0 +1,13 @@
+name: Tests default error handling with bash
+
+on: [push]
+
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Multi line run with on command failing"
+        run: |
+          echo "hello"
+          cp ./i-do-not-exist.file ./target
+          echo "success"
