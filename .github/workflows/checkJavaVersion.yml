@@ -30,7 +30,7 @@ jobs:
           fi
   jdk-latest:
     name: Checkout latest jdk version
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     outputs:
       jdk-date: ${{ steps.get-date.outputs.jdk-date}}
     steps:
@@ -56,13 +56,3 @@ jobs:
     steps:
       - name: do something
         run: echo "Hello"
-
-# Idee:
-# Lese releasse Datei aus, finde JAVA_VERSION_DATE und vergleiche
-#Einmal im Monat:
-# 1. Installiere aktuelle fixed version
-# 2. Lese JAVA_VERSION_DATE in release aus
-# 3. Speichere Ergebnis in env var
-# 4. In einem neuen Job, installiere latest JDK
-# 5. Lese JAVA_VERSION_DATE aus und vergleiche
-# 6. Falls JAVA_VERSION_DATE neuer ist, erstelle slack hook oder PR
