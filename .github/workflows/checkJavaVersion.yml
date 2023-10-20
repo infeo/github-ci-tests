@@ -1,0 +1,14 @@
+name: Checks JDK version for minor updates
+
+on:
+  workflow_dispatch:
+
+jobs:
+  jdk-version-check:
+    name: Also checks jdk version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v2
+        with:
+          java-version: 21.0.0
+          distribution: zulu
