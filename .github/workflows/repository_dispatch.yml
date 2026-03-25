@@ -1,0 +1,17 @@
+name: Run on POST request
+
+on:
+  repository_dispatch:
+    types: [some-update]
+
+jobs:
+  echo-job:
+    name: Outputs the recieved version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      VERSION: ${{ github.event.client_payload.version }}
+    steps:
+      - name: Show version
+        run: echo $VERSION
